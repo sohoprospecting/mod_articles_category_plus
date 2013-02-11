@@ -1,0 +1,19 @@
+.category-module{
+    list-style-type : none;
+    margin: 0px !important;
+}
+
+.category-module li{
+    width: 260px;
+}
+
+.image_intro{
+    float: left;
+    padding-right:  5px;
+    padding-bottom: 3px;
+}
+
+.mod-articles-category-introtext{
+    padding-right: 10px !important;
+}
+
