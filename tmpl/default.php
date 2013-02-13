@@ -44,11 +44,18 @@ $doc->addStyleSheet('/modules/mod_articles_category_plus/css/mod_articles_catego
 	<?php foreach ($list as $item) : ?>
 
         <?php
-        $uri = $item->link;
-        $u   =& JURI::getInstance( $uri );
         if($params->get('menuitem') != 'none'){
-            $u->setVar('Itemid', $params->get('menuitem'));
+            if(JFactory::getConfig()->getValue('config.sef', false) == 1){
+                $item->link = JRoute::_(ContentHelperRoute::getArticleRoute($item->id.':'.$item->alias, $item->catid.':'.$item->category_alias).'&Itemid='.$params->get('menuitem'));
+            }else{
+                $uri =  $item->link;
+                $u   =& JURI::getInstance( $uri );
+                $u->setVar('Itemid', $params->get('menuitem'));
+                $item->link = JRoute::_($u->toString());
+            }
         }
+        // echo "<h5>Banana [/+\][/+\]</h5>";
+        // echo "<h5>".$item->link."</h5>";
         ?>
 
 	    <li>
@@ -60,8 +67,7 @@ $doc->addStyleSheet('/modules/mod_articles_category_plus/css/mod_articles_catego
         <?php endif;?>
 
 	   	<?php if ($params->get('link_titles') == 1) : ?>
-            <!--<a class="mod-articles-category-title <?php echo $item->active; ?>" href="<?php echo $item->link; ?>">-->
-            <a class="mod-articles-category-title <?php echo $item->active; ?>" href="<?php echo $u->toString(); ?>">
+            <a class="mod-articles-category-title <?php echo $item->active; ?>" href="<?php echo $item->link; ?>">
 		<?php echo $item->title; ?>
 
         <?php if ($item->displayHits) :?>
@@ -126,8 +132,7 @@ $doc->addStyleSheet('/modules/mod_articles_category_plus/css/mod_articles_catego
 
 		<?php if ($params->get('show_readmore')) :?>
 			<p class="mod-articles-category-readmore">
-				<!--<a class="mod-articles-category-title <?php echo $item->active; ?>" href="<?php echo $item->link; ?>">-->
-				<a class="mod-articles-category-title <?php echo $item->active; ?>" href="<?php echo $u->toString(); ?>">
+				<a class="mod-articles-category-title <?php echo $item->active; ?>" href="<?php echo $item->link; ?>">
 		        <?php if ($item->params->get('access-view')== FALSE) :
 						echo JText::_('mod_articles_category_plus_REGISTER_TO_READ_MORE');
 					elseif ($readmore = $item->alternative_readmore) :
