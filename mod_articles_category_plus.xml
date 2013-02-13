@@ -434,6 +434,10 @@
 
                 <field name="plugincode" type="textarea" default="" label="MOD_ARTICLES_CATEGORY_PLUS_PLAYER_CODE" description="MOD_ARTICLES_CATEGORY_PLUS_PLAYER_CODE_DESC" rows="10" cols="50" />
 
+                <field name="menuitem" type="menuitem" default="45" label="MOD_ARTICLES_CATEGORY_PLUS_ITEMID" description="MOD_ARTICLES_CATEGORY_PLUS_ITEMID_DESCRIPTION">
+                    <option value="none">MOD_ARTICLES_CATEGORY_PLUS_OPTION</option>
+                </field>
+
                 <field name="frontpage" type="radio" default="0"
 					label="MOD_ARTICLES_CATEGORY_PLUS_FIELD_FRONTPAGE_LABEL"
 					description="MOD_ARTICLES_CATEGORY_PLUS_FIELD_FRONTPAGE_DESC">

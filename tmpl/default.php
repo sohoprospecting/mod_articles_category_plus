@@ -42,6 +42,15 @@ $doc->addStyleSheet('/modules/mod_articles_category_plus/css/mod_articles_catego
 
 <ul class="category-module<?php echo $moduleclass_sfx; ?>">
 	<?php foreach ($list as $item) : ?>
+
+        <?php
+        $uri = $item->link;
+        $u   =& JURI::getInstance( $uri );
+        if($params->get('menuitem') != 'none'){
+            $u->setVar('Itemid', $params->get('menuitem'));
+        }
+        ?>
+
 	    <li>
         <?php if($params->get('frontpage') == 1) : ?>
             <div class="module-title">
@@ -49,9 +58,12 @@ $doc->addStyleSheet('/modules/mod_articles_category_plus/css/mod_articles_catego
         <?php else : ?>
             <h<?php echo $item_heading; ?>>
         <?php endif;?>
+
 	   	<?php if ($params->get('link_titles') == 1) : ?>
-		<a class="mod-articles-category-title <?php echo $item->active; ?>" href="<?php echo $item->link; ?>">
+            <!--<a class="mod-articles-category-title <?php echo $item->active; ?>" href="<?php echo $item->link; ?>">-->
+            <a class="mod-articles-category-title <?php echo $item->active; ?>" href="<?php echo $u->toString(); ?>">
 		<?php echo $item->title; ?>
+
         <?php if ($item->displayHits) :?>
 			<span class="mod-articles-category-hits">
             (<?php echo $item->displayHits; ?>)  </span>
@@ -114,7 +126,8 @@ $doc->addStyleSheet('/modules/mod_articles_category_plus/css/mod_articles_catego
 
 		<?php if ($params->get('show_readmore')) :?>
 			<p class="mod-articles-category-readmore">
-				<a class="mod-articles-category-title <?php echo $item->active; ?>" href="<?php echo $item->link; ?>">
+				<!--<a class="mod-articles-category-title <?php echo $item->active; ?>" href="<?php echo $item->link; ?>">-->
+				<a class="mod-articles-category-title <?php echo $item->active; ?>" href="<?php echo $u->toString(); ?>">
 		        <?php if ($item->params->get('access-view')== FALSE) :
 						echo JText::_('mod_articles_category_plus_REGISTER_TO_READ_MORE');
 					elseif ($readmore = $item->alternative_readmore) :
