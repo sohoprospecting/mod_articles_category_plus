@@ -2,10 +2,6 @@
     list-style-type : none;
 }
 
-.category-module li{
-    width: 260px !important;
-}
-
 .image_intro{
     float: left;
     padding-right:  5px;

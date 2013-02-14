@@ -30,17 +30,25 @@ $doc->addStyleSheet('/modules/mod_articles_category_plus/css/mod_articles_catego
         }
 
         .category-module li  {
-            width:50%;
+			/*Anton*/
+            /*width:50%;*/
+			width:270px !important;
         }
 
         .category-module .module-title h2{
             padding-right: 5px;
             border-bottom: 0px !important;
         }
+
+        .category-module ul {
+            margin: 0px  !important;
+            padding: 1px !important;
+        }
     </style>
 <?php else: ?>
     <style type="text/css">
     .category-module{
+        width: 260px !important;
         margin: 0px !important;
     }
     </style>
