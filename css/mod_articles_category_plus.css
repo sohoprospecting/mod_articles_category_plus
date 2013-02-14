@@ -1,10 +1,9 @@
 .category-module{
     list-style-type : none;
-    margin: 0px !important;
 }
 
 .category-module li{
-    width: 260px;
+    width: 260px !important;
 }
 
 .image_intro{

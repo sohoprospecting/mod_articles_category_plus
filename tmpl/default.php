@@ -38,6 +38,12 @@ $doc->addStyleSheet('/modules/mod_articles_category_plus/css/mod_articles_catego
             border-bottom: 0px !important;
         }
     </style>
+<?php else: ?>
+    <style type="text/css">
+    .category-module{
+        margin: 0px !important;
+    }
+    </style>
 <?php endif;?>
 
 <ul class="category-module<?php echo $moduleclass_sfx; ?>">
