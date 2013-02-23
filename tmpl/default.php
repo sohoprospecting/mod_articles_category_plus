@@ -164,3 +164,5 @@ $doc->addStyleSheet('/modules/mod_articles_category_plus/css/mod_articles_catego
 	</li>
 	<?php endforeach; ?>
 </ul>
+
+<div style="clear : both;  height: 1px;">&nbsp;</div>
