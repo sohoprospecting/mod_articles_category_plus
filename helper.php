@@ -244,7 +244,7 @@ abstract class modArticlesCategoryPlusHelper
 
 	public static function _cleanIntrotext($introtext)
 	{
-		$introtext = str_replace('<p>', ' ', $introtext);
+		$introtext = str_replace('<p>',  ' ', $introtext);
 		$introtext = str_replace('</p>', ' ', $introtext);
 		$introtext = strip_tags($introtext, '<a><em><strong>');
 

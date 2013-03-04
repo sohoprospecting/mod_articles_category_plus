@@ -14,7 +14,7 @@ $doc->addStyleSheet('/modules/mod_articles_category_plus/css/mod_articles_catego
 
 ?>
 <?php if($params->get('frontpage') == 1) : ?>
-    <style type="text/css">
+    <style type="text/css" scoped>
         .category-module ul{
           width:560px;
           /*margin-bottom:20px;*/
