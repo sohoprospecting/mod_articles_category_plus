@@ -17,7 +17,7 @@
     font-size: 16px !important;
     line-height: 13px !important;
     text-rendering: optimizelegibility !important;
-    text-shadow: 1px 1px 0 #F5F1EB, 2px 2px 0 #B7B0AA !important;
+    /*text-shadow: 1px 1px 0 #F5F1EB, 2px 2px 0 #B7B0AA !important;*/
 }
 
 .category-module .module-title .title a:hover{

@@ -44,12 +44,44 @@ $doc->addStyleSheet('/modules/mod_articles_category_plus/css/mod_articles_catego
             margin: 0px  !important;
             padding: 1px !important;
         }
+
+        .image_intro img{
+            width:  100px;
+            height: 100px;
+        }
     </style>
 <?php else: ?>
     <style type="text/css">
     .category-module{
         width: 260px !important;
         margin: 0px !important;
+    }
+
+    /*potrait tablet*/
+    @media (min-width: 768px) and (max-width: 979px) {
+        .category-module{
+            width: 150px !important;
+        }
+
+        .image_intro img{
+            width:  50px !important;
+            height: 50px !important;
+        }
+
+    }
+
+    /* Landscape ipad */
+    @media (max-width: 1200px) {
+
+        .category-module{
+            width: 230px !important;
+        }
+
+        .image_intro img{
+            width:  50px !important;
+            height: 50px !important;
+        }
+
     }
     </style>
 <?php endif;?>
@@ -126,6 +158,7 @@ $doc->addStyleSheet('/modules/mod_articles_category_plus/css/mod_articles_catego
 			<p class="mod-articles-category-introtext">
 			<?php echo $item->displayIntrotext; ?>
 			</p>
+            <div style="clear: both; height: 1px;">&nbsp;</div>
 		<?php endif; ?>
 
         <?php if (trim($item->{'xreference'} != '' )): ?>
@@ -138,7 +171,7 @@ $doc->addStyleSheet('/modules/mod_articles_category_plus/css/mod_articles_catego
                 $results    = $dispatcher->trigger('onContentPrepare', array('text', &$row, &$plugin_params, 0));
                 $output     = $row->text; // The filtered plugin codes are now in the $output variable
 
-                echo "<div style=\"width: 260px;\">".$output."</div>";
+                echo "<div style=\"width: 260px;\" class=\"player_container\">".$output."</div>";
                 ?>
                 <div style="clear : both;">&nbsp;</div>
             <?php // echo str_replace('__AUDIOFILE__',$item->{'xreference'},$params->get('plugincode')); ?>
