@@ -422,6 +422,10 @@
 					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
 					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
 
+                <field name="ulclass_sfx" type="text"
+					label="MOD_ARTICLES_CATEGORY_PLUS_FIELD_ULCLASS_LABEL"
+					description="MOD_ARTICLES_CATEGORY_PLUS_FIELD_ULCLASS_DESC" />
+
 				<field name="owncache" type="list" default="1"
 					label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC" >
 					<option value="1">JGLOBAL_USE_GLOBAL</option>

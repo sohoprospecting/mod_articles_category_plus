@@ -13,80 +13,11 @@ $doc =& JFactory::getDocument();
 $doc->addStyleSheet('/modules/mod_articles_category_plus/css/mod_articles_category_plus.css' );
 
 ?>
-<?php if($params->get('frontpage') == 1) : ?>
-    <style type="text/css" scoped>
-        .category-module ul{
-          width:560px;
-          /*margin-bottom:20px;*/
-          overflow:hidden;
-          /*border-top:1px solid #ccc;*/
-        }
 
-        .category-module li{
-          line-height:1.5em;
-          /*border-bottom:1px solid #ccc;*/
-          float:left;
-          display:inline;
-        }
+<ul class="category-module <?php echo $ulclass_sfx; ?>">
 
-        .category-module li  {
-			/*Anton*/
-            /*width:50%;*/
-			width:270px !important;
-        }
+    <p class="frontpage-module-title">What's New</p>
 
-        .category-module .module-title h2{
-            padding-right: 5px;
-            border-bottom: 0px !important;
-        }
-
-        .category-module ul {
-            margin: 0px  !important;
-            padding: 1px !important;
-        }
-
-        .image_intro img{
-            width:  100px;
-            height: 100px;
-        }
-    </style>
-<?php else: ?>
-    <style type="text/css">
-    .category-module{
-        width: 260px !important;
-        margin: 0px !important;
-    }
-
-    /*potrait tablet*/
-    @media (min-width: 768px) and (max-width: 979px) {
-        .category-module{
-            width: 150px !important;
-        }
-
-        .image_intro img{
-            width:  50px !important;
-            height: 50px !important;
-        }
-
-    }
-
-    /* Landscape ipad */
-    @media (max-width: 1200px) {
-
-        .category-module{
-            width: 230px !important;
-        }
-
-        .image_intro img{
-            width:  50px !important;
-            height: 50px !important;
-        }
-
-    }
-    </style>
-<?php endif;?>
-
-<ul class="category-module<?php echo $moduleclass_sfx; ?>">
 	<?php foreach ($list as $item) : ?>
 
         <?php
@@ -195,6 +126,7 @@ $doc->addStyleSheet('/modules/mod_articles_category_plus/css/mod_articles_catego
 			</p>
 		<?php endif; ?>
 	</li>
+    <li><a href="index.php?option=com_content&amp;view=article&amp;id=5&amp;Itemid=123#mtgs">Board Meeting Packets</a></li>
 	<?php endforeach; ?>
 </ul>
 
